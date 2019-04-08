@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "width": 200,
+    "height": 112,
+    "picture": "/assets/bart.jpg",
+    "clicked": false,
+    "name": "Bart Simpson"
+  },
+  {
+    "id": 2,
+    "width": 200,
+    "height": 112,
+    "picture": "/assets/burns.jpg",
+    "clicked": false,
+    "name": "Montgomery Burns"
+  },
+  {
+    "id": 3,
+    "width": 200,
+    "height": 112,
+    "picture": "/assets/comic-book-guy.jpg",
+    "clicked": false,
+    "name": "Comic Book Guy"
+  },
+  {
+    "id": 4,
+    "width": 200,
+    "height": 112,
+    "picture": "/assets/homer.jpg",
+    "clicked": false,
+    "name": "Homer Simpson"
+  },
+  {
+    "id": 5,
+    "width": 200,
+    "height": 112,
+    "picture": "/assets/krusty.jpg",
+    "clicked": false,
+    "name": "Krusty the Clown"
+  },
+  {
+    "id": 6,
+    "width": 200,
+    "height": 112,
+    "picture": "/assets/lenny.jpg",
+    "clicked": false,
+    "name": "Lenny Leonard"
+  },
+  {
+    "id": 7,
+    "width": 200,
+    "height": 112,
+    "picture": "/assets/lisa.jpg",
+    "clicked": false,
+    "name": "Lisa Simpson"
+  },
+  {
+    "id": 8,
+    "width": 200,
+    "height": 112,
+    "picture": "/assets/marge.jpg",
+    "clicked": false,
+    "name": "Marge Simpson"
+  },
+  {
+    "id": 9,
+    "width": 200,
+    "height": 112,
+    "picture": "/assets/milhouse.png",
+    "clicked": false,
+    "name": "Milhouse Van Houten"
+  },
+  {
+    "id": 10,
+    "width": 200,
+    "height": 112,
+    "picture": "/assets/moe.png",
+    "clicked": false,
+    "name": "Moe Szyslak"
+  },
+  {
+    "id": 11,
+    "width": 200,
+    "height": 112,
+    "picture": "/assets/quimby.jpg",
+    "clicked": false,
+    "name": "Mayor Quimby"
+  },
+  {
+    "id": 12,
+    "width": 200,
+    "height": 112,
+    "picture": "/assets/ralph.jpg",
+    "clicked": false,
+    "name": "Ralph Wiggum"
+  }
+]

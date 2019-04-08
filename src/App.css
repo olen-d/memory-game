@@ -23,6 +23,14 @@
   color: #61dafb;
 }
 
+.App-image-container {
+ width:890px;
+}
+
+.App-character-card {
+  margin-right:20px;
+  margin-bottom:20px;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
