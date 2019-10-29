@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import CharacterCard from  "./components/charactercard";
+import ScoreBoardCard from "./components/scoreboardcard";
+import GameStatusCard from "./components/statuscard"
 
 import characters from "./models/characters.json";
 
@@ -8,24 +10,34 @@ import './App.css';
 
 class App extends Component {
   state = {
-    characters
+    characters,
+    status: "Click to Begin!",
+    score: 0,
+    topScore: 0
   };
 
   handleClick = id => {
     // Check to see if the picture has been clicked already
     const c = this.state.characters.filter(character => character.id === id);
-    console.log("******\n",c);
-    // If the picture has been clicked, "Sorry, you already clicked this character!" and quit game
+
     if (c[0].clicked) {
-      // Update guess status
-      console.log("++++++++\n",c[0].clicked);
+
+      // Update the status
+      this.setState({ status: "Sorry, you already clicked this character!"});
+
       // Quit game
+
     } else {
       // Otherwise update state to set clicked to true for the character
       const characters = this.state.characters.map(character => character.id === id ? {...character, ...{clicked: true}} : character)
       this.setState({characters : characters});
 
       // Add 1 to the score
+      this.setState({ score: this.state.score + 1 });
+
+      // Update the status
+      this.setState({ status: "Congratulations, Your Guess Was Correct!"});
+
     }
   }
 
@@ -39,15 +51,13 @@ class App extends Component {
               <div className="col-4">
                 Memory Game
               </div>
-              <div className="col-4">
-                Status (Click to begin! | You guessed correctly! | You are wrong!)
-              </div>
-              <div className="col-2">
-                Current Score
-              </div>
-              <div className="col-2">
-                Top Score
-              </div>
+              <GameStatusCard
+                status={this.state.status}
+              />
+              <ScoreBoardCard
+                score={this.state.score}
+                topScore={this.state.topScore}
+              />
             </div>
           </header>
           <div className="jumbotron-fluid clear-info mfix text-light bg-red">
