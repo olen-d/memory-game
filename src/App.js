@@ -36,9 +36,15 @@ class App extends Component {
       // Update the status
       this.setState({ status: "Sorry, you already clicked this character!"});
 
-      // Check to see if the current score exceeds the high score
-      // Update the high score if it does
       // Quit game
+      // Check to see if the current score exceeds the high score
+      if (this.state.score > this.state.topScore) {
+        this.setState({ topScore: this.state.score });
+      }
+      // Update the high score if it does
+      // Reset the score
+      this.setState({ score: 0 })
+
 
     } else {
       // Otherwise update state to set clicked to true for the character
