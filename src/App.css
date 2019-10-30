@@ -1,22 +1,16 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Anton', sans-serif;
+}
+
 .App {
+  position: relative;
+  min-height: 100%;
   text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 .App-link {
@@ -24,18 +18,23 @@
 }
 
 .App-image-container {
- width:890px;
+  margin: 4rem auto;
+  width: 90%;
 }
 
 .App-character-card {
-  margin-right:20px;
-  margin-bottom:20px;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  margin-bottom: 3rem;
 }
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.game-title {
+  margin-top: 1.55rem;
+  font-size: 1.8rem;
+}
+
+.game-description {
+  margin-top: 1.0rem;
+  font-family: 'Roboto', sans-serif;  
+  font-size: 1.0rem;
 }

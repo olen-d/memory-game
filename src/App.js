@@ -37,20 +37,24 @@ class App extends Component {
       this.setState({ status: "Sorry, you already clicked this character!"});
 
       // Quit game
-      // Check to see if the current score exceeds the high score
+      // Check to see if the current score exceeds the high score and update the high score if it does
       if (this.state.score > this.state.topScore) {
         this.setState({ topScore: this.state.score });
       }
-      // Update the high score if it does
+
       // Reset the score
       this.setState({ score: 0 })
 
+      // Reset all clicked to false
+
+      const resetCharacters = this.state.characters.map(character => character.clicked = false);
+      this.setState({ charachters : resetCharacters })
 
     } else {
       // Otherwise update state to set clicked to true for the character
       const characters = this.state.characters.map(character => character.id === id ? {...character, ...{clicked: true}} : character);
       const shuffledCharacters = this.shuffleArray(characters);
-      this.setState({characters : shuffledCharacters});
+      this.setState({ characters : shuffledCharacters });
 
       // Add 1 to the score
       this.setState({ score: this.state.score + 1 });
@@ -66,9 +70,11 @@ class App extends Component {
       <div className="App">
         <div className="container-fluid">
           <header className="App-info">
-            <div className="row">
+            <div className="row my-auto">
               <div className="col-4">
-                Memory Game
+                <h1>
+                  Memory Game
+                </h1>
               </div>
               <GameStatusCard
                 status={this.state.status}
@@ -80,16 +86,16 @@ class App extends Component {
             </div>
           </header>
           <div className="jumbotron-fluid clear-info mfix text-light bg-red">
-            <h1>
-              Memory Game!
+            <h1 className="game-title">
+              Remember That Simpsons Character!
             </h1>
-            <h2>
-              Click on an image to earn points, but don't click on one more than once.
+            <h2 className="game-description">
+              Click on an image to earn points, but don't click it more than once.
             </h2>
           </div>
         </div>
-        <div className="container-fluid bg-yellow">
-          <div className="App-image-container mx-auto d-flex flex-row flex-wrap align-items-center">
+        <div className="container-fluid d-flex align-items-center bg-yellow">
+          <div className="App-image-container d-flex justify-content-center flex-wrap">
             {this.state.characters.map(character => (
               <div className="App-character-card" key={character.name}>
                 <CharacterCard
@@ -104,6 +110,11 @@ class App extends Component {
             ))}
           </div>
         </div>
+        <footer className="App-footer text-light">
+          <p className="my-auto">
+            Copyright 2019 <a href="https://www.olen.dev/">Olen Daelhousen</a>
+          </p>
+        </footer>
       </div>
     );
   }
